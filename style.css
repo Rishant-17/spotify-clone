@@ -1,0 +1,392 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto:wght@100..900&family=SUSE+Mono:wght@100..800&family=Varela+Round&display=swap');
+
+/* Global Reset */
+body {
+    background-color: #121212; /* dark Spotify-like theme */
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+}
+
+/* Navbar */
+nav {
+    font-family: "SUSE Mono", monospace;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+    padding: 0 20px;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 0 12px;
+}
+
+nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover,
+nav ul li a:hover {
+    color: #1db954; /* Spotify green */
+    cursor: pointer;
+}
+
+/* Brand */
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-right: auto;
+}
+
+.brand img {
+    width: 44px;
+    margin-right: 8px;
+}
+
+/* Main Container */
+.container {
+    min-height: 60vh;
+    background-color: #181818;
+    display: flex;
+    margin: 23px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Song List */
+.songList {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.songList::-webkit-scrollbar {
+    width: 8px;
+}
+
+.songList::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.songList::-webkit-scrollbar-thumb:hover {
+    background: #1db954;
+}
+
+.songList h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Individual Song Item */
+.songList ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.songItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    margin: 10px 0;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.songItem:hover {
+    background-color: #333;
+    transform: scale(1.02);
+}
+
+/* Highlight active song */
+.songItem.active {
+    background-color: #1db954;
+    color: black;
+}
+
+.songItem.active .timestamp {
+    color: black;
+}
+
+.songItem img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.songName {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timestamp {
+    margin-right: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.playBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.playBtn:hover {
+    color: #1db954;
+    text-shadow: 0 0 8px #1db954;
+}
+
+.playBtn.active {
+    color: #1db954;
+    transform: scale(1.2);
+}
+
+/* Song Banner */
+.songBanner {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Bottom Controls */
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid #333;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+#myProgressBar {
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+#myProgressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #1db954;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#myProgressBar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #1db954;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icons button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icons button:hover {
+    color: #1db954;
+    text-shadow: 0 0 8px #1db954;
+    transform: scale(1.1);
+}
+
+.icons i {
+    font-size: 2.2rem;
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    width: 200px;
+}
+
+.volume-control i {
+    color: #bbb;
+    font-size: 1rem;
+}
+
+#volumeSlider {
+    flex: 1;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #1db954;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #1db954;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Now Playing Info */
+.songInfo {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #bbb;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.songInfo img.playing {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .songItem {
+        padding: 6px 12px;
+    }
+    
+    .songItem img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .songName {
+        font-size: 0.9rem;
+    }
+    
+    .timestamp {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .bottom {
+        height: 120px;
+        padding: 8px;
+    }
+
+    .icons {
+        gap: 20px;
+    }
+
+    .icons i {
+        font-size: 1.8rem;
+    }
+
+    #myProgressBar {
+        width: 95%;
+    }
+    
+    .volume-control {
+        width: 150px;
+    }
+    
+    .songInfo {
+        font-size: 0.85rem;
+    }
+    
+    .songInfo img {
+        width: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .songList h1 {
+        font-size: 1.2rem;
+    }
+    
+    .bottom {
+        height: 110px;
+    }
+    
+    .icons i {
+        font-size: 1.5rem;
+    }
+    
+    .volume-control {
+        width: 120px;
+    }
+}

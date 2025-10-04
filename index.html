@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Your favorite music is here</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul class="navList">
+        <li class="brand">
+          <img src="logo.png" alt="Spotify Logo"> Spotify
+        </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- Song List -->
+    <section class="songList">
+      <h1>Best of NCS - No Copyright Sounds</h1>
+      <ul>
+        <li class="songItem">
+            <img src="./1.jpg" alt="Album cover art for Let Me Love You featuring a vibrant blue theme with abstract glowing patterns and the text Legion It's Always Blue Songs From Legion FX Marvel" class="cover">
+          <span class="songName">Let Me Love You</span>
+          <span class="timestamp">05:34</span>
+          <button class="playBtn"><i class="far sonItemPlay  fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+            <img src="2.jpg" alt="Album cover art for Faded featuring a dark and moody aesthetic with abstract shapes and glowing accents" class="cover">
+          <span class="songName">Faded</span>
+          <span class="timestamp">04:12</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="3.jpg" alt="Alone" class="cover">
+          <span class="songName">Alone</span>
+          <span class="timestamp">03:58</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="4.jpg" alt="On & On" class="cover">
+          <span class="songName">On & On</span>
+          <span class="timestamp">04:45</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="5.jpg" alt="Spectre" class="cover">
+          <span class="songName">Spectre</span>
+          <span class="timestamp">04:02</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="6.jpg" alt="Fearless" class="cover">
+          <span class="songName">Fearless</span>
+          <span class="timestamp">03:30</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="7.jpg" alt="Invincible" class="cover">
+          <span class="songName">Invincible</span>
+          <span class="timestamp">04:20</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="8.jpg" alt="Heroes Tonight" class="cover">
+          <span class="songName">Heroes Tonight</span>
+          <span class="timestamp">03:50</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="9.jpg" alt="Skyline" class="cover">
+          <span class="songName">Skyline</span>
+          <span class="timestamp">04:10</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+
+        <li class="songItem">
+          <img src="10.jpg" alt="Shine" class="cover">
+          <span class="songName">Shine</span>
+          <span class="timestamp">03:45</span>
+          <button class="playBtn"><i class="far sonItemPlay fa-play-circle"></i></button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Bottom Music Controls -->
+  <footer class="bottom">
+    <input type="range" name="range" id="myProgressBar" min="0" max="100" aria-label="Song progress">
+
+    <div class="icons">
+      <button id="previous" aria-label="Previous song"><i class="fas fa-3x fa-fast-backward"></i></button>
+      <button id="masterPlay" aria-label="Play/Pause"><i class="far sonItemPlay fa-3x fa-play-circle"></i></button>
+      <button id="next" aria-label="Next song"><i class="fas fa-3x fa-fast-forward"></i></button>
+    </div>
+
+    <div class="volume-control">
+      <i class="fas fa-volume-down" aria-label="Volume"></i>
+      <input type="range" name="volume" id="volumeSlider" min="0" max="100" value="70" aria-label="Volume control">
+      <i class="fas fa-volume-up" aria-label="Volume"></i>
+    </div>
+
+    <div class="songInfo">
+      <img src="playing.gif" width="42" alt="Playing animation" id="gif">
+      <span>Now Playing: <strong id="currentSong">Let Me Love You - Justin Bieber</strong></span>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
